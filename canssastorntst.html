@@ -146,14 +146,6 @@ $.getJSON( "https://api.torn.com/user/2039819?selections=&key=XpX00XJl", functio
   $( "div.age" ).append("/ Age : <p class='data'>" + data.age + "</p>");
   $( "div.rank" ).append("<b>Rank</b> : <p class='data'>" + data.rank + "</p>");
   $( "div.job" ).append("<b>Job</b> : <p class='data'>" + data.job.position + "</p>");
-  html2canvas(document.body, {
-      onrendered: function(canvas) {
-        document.body.appendChild(canvas);
-      },
-      width:674,
-      height:68,
-      allowTaint: true
-    });
 });
 });</script>
 <div id="body">
@@ -166,3 +158,13 @@ $.getJSON( "https://api.torn.com/user/2039819?selections=&key=XpX00XJl", functio
 <div class="rank"></div>
 <div class="job"></div></div></div>
 </div>
+<script>
+  html2canvas(document.body, {
+      onrendered: function(canvas) {
+        document.body.appendChild(canvas);
+      },
+      width:674,
+      height:68,
+      allowTaint: true
+    });
+</script>
