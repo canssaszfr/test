@@ -159,6 +159,7 @@ $.getJSON( "https://api.torn.com/user/2039819?selections=&key=XpX00XJl", functio
 <div class="job"></div></div></div>
 </div>
 <script>
+$(document).ready(function(){
   html2canvas(document.body, {
       onrendered: function(canvas) {
         document.body.appendChild(canvas);
@@ -167,4 +168,5 @@ $.getJSON( "https://api.torn.com/user/2039819?selections=&key=XpX00XJl", functio
       height:68,
       allowTaint: true
     });
+});
 </script>
