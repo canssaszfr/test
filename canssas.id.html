@@ -1,0 +1,130 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<style>
+/* cyrillic */
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poiret One'), local('PoiretOne-Regular'), url(https://fonts.gstatic.com/s/poiretone/v4/cKr_e199f0xMkxMkRbEJXyEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poiret One'), local('PoiretOne-Regular'), url(https://fonts.gstatic.com/s/poiretone/v4/3Annd_XP-99FcGbOpm6fVCEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poiret One'), local('PoiretOne-Regular'), url(https://fonts.gstatic.com/s/poiretone/v4/HrI4ZJpJ3Fh0wa5ofYMK8fk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+body{
+  width:auto;
+  height:auto;
+  margin:0px;
+}
+#body{
+  margin:0px;
+  background:url("https://s24.postimg.org/a6cv6iilx/bjje8ii.jpg") no-repeat;
+  background-size:auto 80px;
+  color:#c5934f;
+  padding:1px;
+  text-align:left;
+  font-family: 'Poiret One', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+}
+#body > #background{
+  margin:0px;
+  border:1px solid #fff;
+  max-width:100%;
+  padding:0px;
+  padding-left:15px;
+  height:64px;
+  box-shadow:-3px -3px 5px 5px rgba(255,255,255,0.25);
+  max-width:649px;
+}
+#background > div,#background > div > div{
+  padding:0px;
+}
+#name{
+  display:inline-block;
+  padding-top:0px !important;
+  margin-top:-3px !important;
+}
+#levelbar{
+  margin-top:-5px;
+  width:120px;
+}
+#levelbar div{
+  margin-right:10px;
+  display:inline-block;
+  font-size:12px;
+  font-family:impact;
+}
+.name{
+  font-size:14px;
+  display:inline-block;
+  width:120px;
+}
+.name div{
+  font-family:courier new;
+  display:inline-block;
+  font-size:10px;
+  margin-left:5px;
+}
+#other{
+  padding-top:0px !important;
+  margin-top:-3px !important;
+  font-size:12px;
+  display:inline-block;
+}
+#other div{
+  display:block;
+}
+.data{
+  display:inline-block;
+  color:#a78f66;
+}
+p{
+  padding:0px;
+  margin:0px;
+}
+#TORN{
+  font-family:impact;
+  font-size:22px;
+  padding:0px !important;
+  margin:0px !important;
+}
+canvas{
+  padding:0px;
+  margin:0px;
+}
+</style>
+<script>
+$(document).ready(function(){
+$.getJSON( "https://api.torn.com/user/2039819?selections=&key=XpX00XJl", function( data ) {
+  $( "div.name" ).append("<b>" + data.name + "</b><div class='data'> [" + data.player_id + "]</div>");
+  $( "div.level" ).append("Level : <p class='data'>" + data.level + "</p>");
+  $( "div.age" ).append("/ Age : <p class='data'>" + data.age + "</p>");
+  $( "div.rank" ).append("<b>Rank</b> : <p class='data'>" + data.rank + "</p>");
+  $( "div.job" ).append("<b>Job</b> : <p class='data'>" + data.job.position + "</p>");
+});
+});
+</script>
+<body>
+<div id="body">
+<div id="background" style="text-align:left;"><div id="TORN">TORN</div>
+<div id="name"><div class="name"></div>
+<div id="levelbar">
+<div class="level"></div>
+<div class="age"></div></div></div>
+<div id="other">
+<div class="rank"></div>
+<div class="job"></div></div></div>
+</div></body>
