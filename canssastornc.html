@@ -1,24 +1,5 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//cdn.rawgit.com/canssaszfr/test/master/html2canvas.js"></script>
-<script>$(document).ready(function(){
-$.getJSON( "https://api.torn.com/user/2039819?selections=&key=XpX00XJl", function( data ) {
-  $( "div.name" ).append("<b>" + data.name + "</b><div class='data'> [" + data.player_id + "]</div>");
-  $( "div.level" ).append("Level : <p class='data'>" + data.level + "</p>");
-  $( "div.age" ).append("/ Age : <p class='data'>" + data.age + "</p>");
-  $( "div.rank" ).append("<b>Rank</b> : <p class='data'>" + data.rank + "</p>");
-  $( "div.job" ).append("<b>Job</b> : <p class='data'>" + data.job.position + "</p>");
-});
-});</script>
-<div id="body">
-<div id="background" style="text-align:left;"><div id="TORN">TORN</div>
-<div id="name"><div class="name"></div>
-<div id="levelbar">
-<div class="level"></div>
-<div class="age"></div></div></div>
-<div id="other">
-<div class="rank"></div>
-<div class="job"></div></div></div>
-</div>
 <style>/* cyrillic */
 @font-face {
   font-family: 'Poiret One';
@@ -116,8 +97,13 @@ p{
   padding:0px !important;
   margin:0px !important;
 }</style>
-<script>
-$(document).ready(function(){
+<script>$(document).ready(function(){
+$.getJSON( "https://api.torn.com/user/2039819?selections=&key=XpX00XJl", function( data ) {
+  $( "div.name" ).append("<b>" + data.name + "</b><div class='data'> [" + data.player_id + "]</div>");
+  $( "div.level" ).append("Level : <p class='data'>" + data.level + "</p>");
+  $( "div.age" ).append("/ Age : <p class='data'>" + data.age + "</p>");
+  $( "div.rank" ).append("<b>Rank</b> : <p class='data'>" + data.rank + "</p>");
+  $( "div.job" ).append("<b>Job</b> : <p class='data'>" + data.job.position + "</p>");
   html2canvas(document.body, {
       onrendered: function(canvas) {
         document.body.appendChild(canvas);
@@ -127,4 +113,14 @@ $(document).ready(function(){
       allowTaint: true
     });
 });
-</script>
+});</script>
+<div id="body">
+<div id="background" style="text-align:left;"><div id="TORN">TORN</div>
+<div id="name"><div class="name"></div>
+<div id="levelbar">
+<div class="level"></div>
+<div class="age"></div></div></div>
+<div id="other">
+<div class="rank"></div>
+<div class="job"></div></div></div>
+</div>
